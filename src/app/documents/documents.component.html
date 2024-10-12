@@ -1,0 +1,8 @@
+<div class="flex flex-wrap gap-4">
+  <div class="w-full md:w-5/12">
+    <app-document-list (selectedDocumentEvent)="onSelectedDocument($event)"></app-document-list>
+  </div>
+  <div class="w-full md:w-4/12">
+    <app-document-detail [document]="selectedDocument"></app-document-detail>
+  </div>
+</div>

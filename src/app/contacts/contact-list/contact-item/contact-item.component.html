@@ -1,0 +1,12 @@
+<a
+  href="#"
+  (click)="onSelectedContact(contact)"
+  #selectedContact
+  class="flex justify-between border items-center rounded">
+  <p
+    class="p-3">{{contact.name}}</p>
+  <img
+    class="w-[50px] p-1"
+    src="{{contact.imageUrl}}"
+    alt="{{contact.name}}">
+</a>

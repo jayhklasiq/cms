@@ -1,0 +1,41 @@
+<div
+  class="p-10 bg-blue-500 text-white">
+  <div>
+    <nav
+      class="flex justify-between font-bold">
+      <a
+        class="font-bold text-lg"
+        href="">WeLearnCMS</a>
+      <div>
+        <ul
+          class="flex gap-10">
+          <li><a
+              class="no-underline"
+              (click)="onSelected('documents')">Documents</a></li>
+          <li><a
+              class="no-underline"
+              (click)="onSelected('messages')">Messages</a></li>
+          <li><a
+              class="no-underline"
+              (click)="onSelected('contacts')">Contacts</a></li>
+        </ul>
+      </div>
+      <div>
+        <a
+          class="no-underline p-2 rounded-md border border-black"
+          (click)="toggleDropdown()">User</a>
+      </div>
+      <div
+        *ngIf="showDropdown">
+        <ul>
+          <li><a
+              class="no-underline"
+              href="">Placeholder 1</a></li>
+          <li><a
+              class="no-underline"
+              href="">Placeholder 2</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

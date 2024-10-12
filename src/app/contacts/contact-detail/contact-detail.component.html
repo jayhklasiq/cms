@@ -1,0 +1,28 @@
+<div
+  class="border rounded-xl p-3" *ngIf="contact">
+  <div
+    #finalContactDetail
+    class="bg-gray-300 rounded-t-lg">
+    <p
+      class="p-5 font-bold text-xl">{{contact.name}}</p>
+    <div
+      class="items-center flex justify-between p-5">
+      <img
+        class="w-[30%]" src="{{contact.imageUrl}}" alt="{{contact.name}}">
+      <div
+        class="flex justify-between gap-5">
+        <button
+          class="p-2 bg-blue-600 text-white rounded-md">Edit</button>
+        <button
+          class="p-2 bg-red-600 text-white rounded-md">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="p-4 border-x border-b rounded-b-lg">
+    <p
+      class="font-semibold">Email: {{contact.email}}</p>
+    <p
+      class="font-semibold">Phone: {{contact.phone}}</p>
+  </div>
+</div>

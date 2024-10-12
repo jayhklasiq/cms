@@ -1,0 +1,12 @@
+<div class="bg-white border border-gray-300 rounded-lg shadow-md"></div>
+<div class="bg-gray-200 px-4 py-2 flex justify-between items-center">
+  <span class="font-semibold text-lg">Documents</span>
+  <a class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Add Document</a>
+</div>
+<div class="p-4">
+  <div>
+    <div *ngFor="let document of documents" (click)="onSelectedDocument(document); selectedDocumentEvent.emit(document)">
+      <app-document-item [document]="document"></app-document-item>
+    </div>
+  </div>
+</div>

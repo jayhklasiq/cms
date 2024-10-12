@@ -1,0 +1,15 @@
+<div
+  class="border border-gray-300 rounded-2xl">
+  <div
+    class="flex justify-between bg-gray-300 border p-4 rounded-t-2xl">
+    <h3>Contacts</h3>
+    <button
+      class="text-white p-2 rounded-lg bg-green-700">New Contact</button>
+  </div>
+  <app-contact-item
+    *ngFor="let contactItem of contacts"
+    [contact]="contactItem"
+    (selectedContact)="updateFetchedContact(contactItem)"
+    #selectedContactFronList
+    (click)="updateFetchedContact(selectedContactFronList.contact)"></app-contact-item>
+</div>
