@@ -21,20 +21,22 @@
         </ul>
       </div>
       <div>
-        <a
-          class="no-underline p-2 rounded-md border border-black"
-          (click)="toggleDropdown()">User</a>
-      </div>
-      <div
-        *ngIf="showDropdown">
-        <ul>
-          <li><a
-              class="no-underline"
-              href="">Placeholder 1</a></li>
-          <li><a
-              class="no-underline"
-              href="">Placeholder 2</a></li>
-        </ul>
+        <div class="dropdown">
+          <a appDropdown href="#" class="dropdown-toggle" role="button">User<span class="caret"></span></a>
+          <ul
+            class="text-black bg-white p-3 rounded dropdown-menu">
+            <li><a
+                class="no-underline -2"
+                href="">Login</a></li>
+            <li><a
+                class="no-underline p2"
+                href="">Other</a></li>
+            <hr>
+            <li><a
+                class="no-underline p-2"
+                href="">Log Out</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
