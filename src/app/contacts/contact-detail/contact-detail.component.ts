@@ -10,6 +10,5 @@ export class ContactDetailComponent {
   @Input() contact: Contact;
 
   constructor() {
-    console.log(this.contact);
   }
 }

@@ -1,7 +1,6 @@
 <a class="block w-full p-4 bg-white border-b border-gray-300 hover:bg-gray-100">
-  <div
-    class="flex justify-between items-center">
-    <span class="text-lg font-semibold text-gray-900">{{ message.sender }}</span>
-    <div class="text-sm text-gray-700">{{ message.msgText }}</div> <!-- Updated to use message.msgText -->
+  <div class="message-item">
+    <h3>{{ messageSender }}</h3>
+    <p>{{ message?.msgText }}</p>
   </div>
 </a>

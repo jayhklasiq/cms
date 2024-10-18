@@ -1,7 +1,7 @@
 <div class="border rounded-lg shadow-md p-4">
   <div class="border-b pb-4 mb-4">
-    <div class="flex justify-between items-center">
-      <h4 class="text-xl font-semibold">{{document.title}}</h4>
+    <div class="flex flex-wrap justify-between items-center">
+      <h4 class="text-xl font-semibold">{{document.name}}</h4>
       <div class="flex space-x-2">
         <a class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">View</a>
         <a class="bg-blue-300 text-white px-4 py-2 rounded-md hover:bg-blue-400">Edit</a>
@@ -12,7 +12,7 @@
   <div class="space-y-4">
     <div class="flex items-center">
       <label class="font-semibold w-24">Description:</label>
-      <span class="text-gray-700">{{document.description}}</span>
+      <span class="text-gray-700">{{document.name}}</span>
     </div>
     <div class="flex items-center">
       <label class="font-semibold w-24">URL:</label>

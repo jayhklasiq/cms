@@ -9,7 +9,5 @@
   <app-contact-item
     *ngFor="let contactItem of contacts"
     [contact]="contactItem"
-    (selectedContact)="updateFetchedContact(contactItem)"
-    #selectedContactFronList
-    (click)="updateFetchedContact(selectedContactFronList.contact)"></app-contact-item>
+    (selectedContact)="updateFetchedContact(contactItem)"></app-contact-item>
 </div>

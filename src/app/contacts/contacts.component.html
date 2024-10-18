@@ -2,16 +2,13 @@
   class="flex justify-evenly gap-10 px-5 mt-5">
   <div
     class="w-[50%]">
-    <app-contact-list
-      (fetchedContact)="onClick($event)
-      "></app-contact-list>
+    <app-contact-list></app-contact-list>
   </div>
   <div
     class="w-[50%]">
-    <div *ngIf="selectedContacts.length > 0">
+    <div>
       <app-contact-detail
-        [contact]="selectedContacts[selectedContacts.length - 1]"
-        (finalContactDetail)="onClick(selectedContacts[selectedContacts.length - 1])">
+        [contact]="selectedContacts[selectedContacts.length - 1]">
       </app-contact-detail>
     </div>
   </div>

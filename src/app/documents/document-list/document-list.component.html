@@ -5,8 +5,9 @@
 </div>
 <div class="p-4">
   <div>
-    <div *ngFor="let document of documents" (click)="onSelectedDocument(document); selectedDocumentEvent.emit(document)">
-      <app-document-item [document]="document"></app-document-item>
+    <div *ngFor="let document of documents">
+      <app-document-item [document]="document"
+      ></app-document-item>
     </div>
   </div>
 </div>
