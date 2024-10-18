@@ -43,6 +43,7 @@ export class MessageEditComponent implements OnInit {
     };
     console.log(this.newMessage);
     this.messageService.addMessage(this.newMessage);
+    this.onClear();
   }
 
   ngOnInit() {
