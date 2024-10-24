@@ -9,15 +9,12 @@
       <div>
         <ul
           class="flex gap-10">
-          <li><a
-              class="no-underline"
-              (click)="onSelected('documents')">Documents</a></li>
-          <li><a
-              class="no-underline"
-              (click)="onSelected('messages')">Messages</a></li>
-          <li><a
-              class="no-underline"
-              (click)="onSelected('contacts')">Contacts</a></li>
+          <li routerLink="documents"><a
+              class="no-underline">Documents</a></li>
+          <li routerLink="messages"><a
+              class="no-underline">Messages</a></li>
+          <li routerLink="contacts"><a
+              class="no-underline">Contacts</a></li>
         </ul>
       </div>
       <div>

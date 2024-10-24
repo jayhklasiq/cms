@@ -18,6 +18,8 @@ import { HeaderComponent } from './header.component';
 import { DropdownDirective } from './dropdown.directive';
 import { ContactService } from './contacts/contact.service';
 import { DocumentsService } from './documents/documents.service';
+import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { DocumentsService } from './documents/documents.service';
     MessageListComponent,
     HeaderComponent,
     DropdownDirective,
+    DocumentEditComponent,
+    ContactEditComponent,
   ],
   imports: [
     BrowserModule,

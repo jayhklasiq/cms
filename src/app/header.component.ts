@@ -11,9 +11,4 @@ export class HeaderComponent {
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
   }
-  @Output() selectedFeatureEvent = new EventEmitter<string>();
-
-  onSelected(selectedEvent: string) {
-    this.selectedFeatureEvent.emit(selectedEvent);
-  }
 }

@@ -11,8 +11,10 @@
       <div
         class="flex justify-between gap-5">
         <button
+          routerLink="edit"
           class="p-2 bg-blue-600 text-white rounded-md">Edit</button>
         <button
+          (click)="onDelete()"
           class="p-2 bg-red-600 text-white rounded-md">Delete</button>
       </div>
     </div>
