@@ -7,8 +7,17 @@
       routerLink="new"
       class="text-white p-2 rounded-lg bg-green-700">New Contact</button>
   </div>
-  <app-contact-item
-    *ngFor="let contactItem of contacts"
-    [contact]="contactItem"
-    (selectedContact)="updateFetchedContact(contactItem)"></app-contact-item>
+  <div 
+    cdkDropList
+    #contactList="cdkDropList"
+    [cdkDropListData]="contacts"
+    [cdkDropListConnectedTo]="dropTargets"
+    class="contact-list">
+    <div 
+      *ngFor="let contact of contacts" 
+      cdkDrag
+      class="contact-item">
+      <app-contact-item [contact]="contact"></app-contact-item>
+    </div>
+  </div>
 </div>

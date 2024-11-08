@@ -12,8 +12,8 @@ const appRoute: Routes = [
   { path: '', redirectTo: '/documents', pathMatch: 'full' },
   {
     path: 'documents', component: DocumentsComponent, children: [
-      { path: ':id', component: DocumentDetailComponent },
       { path: 'new', component: DocumentEditComponent },
+      { path: ':id', component: DocumentDetailComponent },
       { path: ':id/edit', component: DocumentEditComponent }
     ]
   },
