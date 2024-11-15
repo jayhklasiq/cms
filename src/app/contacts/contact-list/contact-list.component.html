@@ -1,20 +1,39 @@
-<div
-  class="border border-gray-300 rounded-2xl">
-  <div
-    class="flex justify-between bg-gray-300 border p-4 rounded-t-2xl">
-    <h3>Contacts</h3>
-    <button
-      routerLink="new"
-      class="text-white p-2 rounded-lg bg-green-700">New Contact</button>
+<div class="bg-white border border-gray-300 rounded-lg">
+  <div class="p-4">
+    <div class="flex justify-between items-center mb-4">
+      <span class="text-xl font-semibold">Contacts</span>
+    </div>
+    <div class="flex items-center mb-4">
+      <div class="flex-1 relative">
+        <input
+          type="text"
+          #searchBox
+          (keyup)="search(searchBox.value)"
+          placeholder="Enter search value"
+          class="w-full pl-3 pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button
+          class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+          (click)="search(searchBox.value)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <a
+        routerLink="new"
+        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition duration-200"> New Contact </a>
+    </div>
   </div>
-  <div 
+  <div
     cdkDropList
     #contactList="cdkDropList"
     [cdkDropListData]="contacts"
     [cdkDropListConnectedTo]="dropTargets"
     class="contact-list">
-    <div 
-      *ngFor="let contact of contacts" 
+    <div
+      *ngFor="let contact of contacts | contactsFilter:term"
       cdkDrag
       class="contact-item">
       <app-contact-item [contact]="contact"></app-contact-item>

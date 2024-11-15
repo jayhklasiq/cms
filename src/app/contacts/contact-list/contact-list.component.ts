@@ -11,6 +11,7 @@ import { CdkDropList } from '@angular/cdk/drag-drop';
 export class ContactListComponent implements OnInit {
   contacts: Contact[] = [];
   dropTargets: CdkDropList[] = [];
+  term: string;
 
   constructor(private contactService: ContactService) { }
 
@@ -23,8 +24,11 @@ export class ContactListComponent implements OnInit {
     );
   }
 
-  // Method to add drop target
   addDropTarget(target: CdkDropList) {
     this.dropTargets.push(target);
+  }
+
+  search(value: string) {
+    this.term = value;
   }
 }
