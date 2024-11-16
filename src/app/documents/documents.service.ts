@@ -18,13 +18,13 @@ export class DocumentsService {
   }
 
   getDocuments() {
-    this.http.get<Document[]>('https://wdd430-cms-c8c7c-default-rtdb.firebaseio.com/documents.json')
+    return this.http.get<Document[]>('https://wdd430-cms-c8c7c-default-rtdb.firebaseio.com/documents.json')
       .subscribe(
         // success method
         (documents: Document[]) => {
           this.documents = documents;
           this.maxDocumentId = this.getMaxId();
-          
+
           // Sort documents by name
           this.documents.sort((a, b) => {
             if (a.name < b.name) {
@@ -35,7 +35,7 @@ export class DocumentsService {
             }
             return 0;
           });
-          
+
           // Emit the sorted list
           this.documentListChangedEvent.next(this.documents.slice());
         },
@@ -67,8 +67,7 @@ export class DocumentsService {
     }
 
     this.documents.splice(pos, 1);
-    const documentsListClone = this.documents.slice();
-    this.documentListChangedEvent.next(documentsListClone);
+    this.storeDocuments();
   }
 
   documentSelectedEvent = new EventEmitter<Document>();
@@ -95,8 +94,7 @@ export class DocumentsService {
     this.maxDocumentId++;
     newDocument.id = this.maxDocumentId.toString();
     this.documents.push(newDocument);
-    const documentsListClone = this.documents.slice();
-    this.documentListChangedEvent.next(documentsListClone);
+    this.storeDocuments();
   }
 
   updateDocument(originalDocument: Document, newDocument: Document) {
@@ -111,8 +109,22 @@ export class DocumentsService {
 
     newDocument.id = originalDocument.id;
     this.documents[pos] = newDocument;
-    const documentsListClone = this.documents.slice();
-    this.documentListChangedEvent.next(documentsListClone);
+    this.storeDocuments();
+  }
+
+  storeDocuments() {
+    const documents = JSON.stringify(this.documents);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    this.http.put(
+      'https://wdd430-cms-c8c7c-default-rtdb.firebaseio.com/documents.json',
+      documents,
+      { headers: headers }
+    ).subscribe(() => {
+      this.documentListChangedEvent.next(this.documents.slice());
+    });
   }
 
 }
