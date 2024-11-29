@@ -1,0 +1,40 @@
+### Get all documents
+GET http://localhost:3000/api/documents
+Accept: application/json
+
+###
+
+### Get a specific document by ID
+GET http://localhost:3000/api/documents/101
+Accept: application/json
+
+###
+
+### Create a new document
+POST http://localhost:3000/api/documents
+Content-Type: application/json
+
+{
+  "id": "54",
+  "name": "New Document",
+  "description": "Description of the new document",
+  "url": "http://example.com/document"
+}
+
+###
+
+### Update a document by ID
+PUT http://localhost:3000/api/documents/101
+Content-Type: application/json
+
+{
+  "name": "Updated Document",
+  "description": "Updated description of the document",
+  "url": "http://example.com/updated-document"
+}
+
+###
+
+### Delete a document by ID
+DELETE http://localhost:3000/api/documents/101
+Accept: application/json

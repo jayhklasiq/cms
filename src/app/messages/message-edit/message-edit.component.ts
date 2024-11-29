@@ -46,8 +46,9 @@ export class MessageEditComponent implements OnInit {
     this.onClear();
   }
 
-  ngOnInit() {
-    this.contact = this.contactService.getContact("99");
+  async ngOnInit() {
+    this.contact = await this.contactService.getContact("101");
+    console.log(this.contact);
     this.currentSender = this.contact.name;
     this.currentSenderID = this.contact.id;
   }

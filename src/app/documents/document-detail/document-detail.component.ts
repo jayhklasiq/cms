@@ -18,7 +18,6 @@ export class DocumentDetailComponent implements OnInit {
     private router: Router,
     private windRef: WindRefService) {
     this.nativeWindow = this.windRef.getNativeWindow();
-
   }
 
   onView() {
@@ -37,7 +36,11 @@ export class DocumentDetailComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.documentId = params['id'];
-        this.document = this.documentService.getDocument(this.documentId);
+        this.documentService.getDocument(this.documentId).then((document: Document) => {
+          this.document = document;
+        }).catch(() => {
+          this.document = {} as Document;
+        });
       });
   }
 }

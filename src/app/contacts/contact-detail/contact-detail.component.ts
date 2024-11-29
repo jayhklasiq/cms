@@ -17,11 +17,11 @@ export class ContactDetailComponent implements OnInit {
     private router: Router,) {
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.route.params.subscribe(
-      (params: Params) => {
+      async (params: Params) => {
         this.contactId = params['id'];
-        this.contact = this.contactService.getContact(this.contactId);
+        this.contact = await this.contactService.getContact(this.contactId);
       });
   }
 

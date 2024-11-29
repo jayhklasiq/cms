@@ -1,0 +1,39 @@
+### Get all messages
+GET http://localhost:3000/api/messages
+Accept: application/json
+
+###
+
+### Get a specific message by ID
+GET http://localhost:3000/api/messages/96
+Accept: application/json
+
+###
+
+### Create a new message
+POST http://localhost:3000/api/messages
+Content-Type: application/json
+
+{
+    "id": "96",
+    "subject": "Hello World",
+    "msgText": "This is a test message.",
+    "sender": "101"
+}
+
+###
+
+### Update a message by ID
+PUT http://localhost:3000/api/messages/96
+Content-Type: application/json
+
+{
+    "subject": "Updated Subject",
+    "msgText": "This is an updated test message.",
+    "sender": "john.smith@example.com"
+}
+
+###
+
+### Delete a message by ID
+DELETE http://localhost:3000/api/messages/96

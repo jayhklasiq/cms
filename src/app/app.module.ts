@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -44,7 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownDirective,
     DocumentEditComponent,
     ContactEditComponent,
-    ContactsFilterPipe,
+    ContactsFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -53,7 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     DragDropModule,
     HttpClientModule
   ],
-  providers: [ContactService, DocumentsService, ContactListComponent],
+  providers: [ContactService, DocumentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

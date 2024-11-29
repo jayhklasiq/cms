@@ -32,19 +32,21 @@ export class ContactEditComponent implements OnInit {
           return;
         }
 
-        this.originalContact = this.contactService.getContact(this.id);
-        if (!this.originalContact) {
-          return;
-        }
+        this.contactService.getContact(this.id).then(contact => {
+          this.originalContact = contact;
+          if (!this.originalContact) {
+            return;
+          }
 
-        this.editMode = true;
-        // Using JSON parse/stringify for deep cloning
-        this.contact = JSON.parse(JSON.stringify(this.originalContact));
+          this.editMode = true;
+          // Using JSON parse/stringify for deep cloning
+          this.contact = JSON.parse(JSON.stringify(this.originalContact));
 
-        if (this.contact.group) {
-          // Using JSON parse/stringify for deep cloning of group contacts
-          this.groupContacts = JSON.parse(JSON.stringify(this.contact.group));
-        }
+          if (this.contact.group) {
+            // Using JSON parse/stringify for deep cloning of group contacts
+            this.groupContacts = JSON.parse(JSON.stringify(this.contact.group));
+          }
+        });
       }
     );
   }
